@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Paul's Precision Handyman — Engineering-grade home repairs for busy professionals in Lexington, KY. Minor electrical, door repairs, and to-do list completion."/>
+  <title>Paul's Precision Handyman | Lexington, KY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "safety-orange": "#FF8C00", "deep-navy": "#1B2B48", "slate-gray": "#4A5568",
+            "surface": "#f7fafc", "background": "#f7fafc", "surface-bright": "#f7fafc",
+            "surface-dim": "#d7dadc", "surface-variant": "#e0e3e5", "border-light": "#E2E8F0",
+            "on-surface": "#181c1e", "on-background": "#181c1e", "on-surface-variant": "#44474d",
+            "primary": "#041632", "on-primary": "#ffffff", "primary-fixed": "#d7e2ff",
+            "primary-fixed-dim": "#b7c7eb", "primary-container": "#1b2b48",
+            "on-primary-container": "#8393b5", "on-primary-fixed": "#091b37",
+            "inverse-primary": "#b7c7eb", "tertiary-fixed-dim": "#ffb77d",
+            "tertiary-fixed": "#ffdcc3", "on-tertiary-fixed": "#2f1500",
+            "on-tertiary-container": "#dd7900", "success-green": "#2F855A",
+            "surface-container": "#ebeef0", "surface-container-low": "#f1f4f6",
+            "outline-variant": "#c5c6ce"
+          },
+          borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+          spacing: {
+            "section-padding-desktop": "80px", "section-padding-mobile": "48px",
+            "gutter": "24px", "stack-sm": "8px", "stack-md": "16px", "stack-lg": "32px",
+            "container-max": "1280px"
+          },
+          fontFamily: {
+            "display-lg": ["Montserrat", "sans-serif"], "display-lg-mobile": ["Montserrat", "sans-serif"],
+            "headline-md": ["Montserrat", "sans-serif"], "headline-sm": ["Montserrat", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"], "body-md": ["Inter", "sans-serif"],
+            "label-bold": ["Inter", "sans-serif"], "testimonial-quote": ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-bold": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "testimonial-quote": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+    .ms { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 1; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+
+<!-- Navigation -->
+<header class="bg-surface/95 backdrop-blur-md border-b border-border-light shadow-sm sticky top-0 z-50">
+  <div class="flex justify-between items-center w-full px-6 py-4 max-w-[1280px] mx-auto">
+    <a href="index.html" class="font-headline-sm text-headline-sm font-bold text-deep-navy hover:opacity-90 transition-opacity">
+      Paul's Precision Handyman
+    </a>
+    <nav class="hidden md:flex gap-6 items-center">
+      <a href="services.html" class="font-label-bold text-label-bold text-slate-gray hover:text-deep-navy transition-colors">Services</a>
+      <a href="about.html" class="font-label-bold text-label-bold text-slate-gray hover:text-deep-navy transition-colors">About</a>
+      <a href="areas.html" class="font-label-bold text-label-bold text-slate-gray hover:text-deep-navy transition-colors">Areas</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+18592278314" class="hidden md:inline-flex font-label-bold text-label-bold text-deep-navy border-2 border-deep-navy px-4 py-2 rounded hover:bg-surface-dim transition-colors">Call Paul</a>
+      <a href="areas.html#contact" class="bg-safety-orange text-white px-6 py-2 rounded font-label-bold text-label-bold hover:opacity-90 transition-opacity shadow-sm">Book Now</a>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-deep-navy" aria-label="Toggle menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border-light bg-surface">
+    <nav class="flex flex-col px-6 py-4 gap-4">
+      <a href="services.html" class="font-label-bold text-label-bold text-slate-gray hover:text-deep-navy transition-colors py-1">Services</a>
+      <a href="about.html" class="font-label-bold text-label-bold text-slate-gray hover:text-deep-navy transition-colors py-1">About</a>
+      <a href="areas.html" class="font-label-bold text-label-bold text-slate-gray hover:text-deep-navy transition-colors py-1">Areas</a>
+      <a href="tel:+18592278314" class="font-label-bold text-label-bold text-safety-orange py-1">Call: 859-227-8314</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-deep-navy pt-[48px] pb-[48px] md:pt-[80px] md:pb-[80px]">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-deep-navy/80 mix-blend-multiply z-10"></div>
+    <img
+      src="https://lh3.googleusercontent.com/aida/AP1WRLsM-hZeopaY5ysKIBLp9Hx_Q3paHIwtzi8CzO8gtV-5KiTj_03tuVJshxLIX4P72XruTkwZis5H7RQ65emBL_H2b7R1NRmQibfFCGegLmjLsOkXn9rlV4Qn6VxbhIkrzXYmqWPqg88DB2Vo4Al52q5FF7dKAgbVmeDU1wEC3fdJ8BwhBAKft4VdfWUF-2xrd6TDN3XNsFlz1WuJ_kEhsKxvn7eurOjEJaAkUHz64aUsW7tTvHO0tdxdW2wv"
+      alt="Paul in his work truck"
+      class="w-full h-full object-cover object-center"
+    />
+  </div>
+  <div class="relative z-20 max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+    <div class="lg:col-span-8 space-y-4">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white px-3 py-1 rounded border border-white/20 font-label-bold text-label-bold">
+        <span class="material-symbols-outlined text-safety-orange text-sm" style="font-variation-settings:'FILL' 1;">verified</span>
+        Lexington's Trusted Engineer-Turned-Handyman
+      </div>
+      <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white">
+        Precision Handyman Services for Busy Professionals
+      </h1>
+      <p class="font-body-lg text-body-lg text-surface-dim max-w-2xl">
+        Stop stressing over home repairs. From electrical fixes to custom installations, get engineering-grade precision from a trusted local expert in Lexington, KY.
+      </p>
+      <div class="pt-2 flex flex-col sm:flex-row gap-4">
+        <a href="areas.html#contact" class="bg-safety-orange text-white px-8 py-3 rounded font-label-bold text-label-bold text-center hover:opacity-90 transition-all shadow-md">
+          Book My Estimate
+        </a>
+        <a href="sms:+18592278314" class="border-2 border-white text-white px-8 py-3 rounded font-label-bold text-label-bold text-center hover:bg-white/10 transition-colors">
+          Text for a Quote
+        </a>
+      </div>
+    </div>
+    <div class="lg:col-span-4 hidden lg:block">
+      <div class="glass-card p-6 rounded-xl text-white">
+        <h3 class="font-headline-sm text-headline-sm mb-4">Why Choose Paul?</h3>
+        <ul class="space-y-4 font-body-md text-body-md">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-safety-orange mt-1" style="font-variation-settings:'FILL' 1;">engineering</span>
+            <span>Former Electrical Engineer bringing precision to every job.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-safety-orange mt-1" style="font-variation-settings:'FILL' 1;">timer</span>
+            <span>Reliable scheduling — shows up when promised.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-safety-orange mt-1" style="font-variation-settings:'FILL' 1;">school</span>
+            <span>Passionate about teaching and empowering homeowners.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="bg-surface border-b border-border-light py-6">
+  <div class="max-w-[1280px] mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-6">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-deep-navy text-3xl" style="font-variation-settings:'FILL' 1;">shield</span>
+      <span class="font-label-bold text-label-bold text-slate-gray">Licensed &amp; Insured</span>
+    </div>
+    <div class="hidden md:block w-px h-8 bg-border-light"></div>
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-deep-navy text-3xl" style="font-variation-settings:'FILL' 1;">location_on</span>
+      <span class="font-label-bold text-label-bold text-slate-gray">Lexington Local</span>
+    </div>
+    <div class="hidden md:block w-px h-8 bg-border-light"></div>
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-deep-navy text-3xl" style="font-variation-settings:'FILL' 1;">engineering</span>
+      <span class="font-label-bold text-label-bold text-slate-gray">40+ Years Engineering Experience</span>
+    </div>
+    <div class="hidden md:block w-px h-8 bg-border-light"></div>
+    <div class="flex items-center gap-3">
+      <div class="flex text-safety-orange gap-0.5">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+      </div>
+      <span class="font-label-bold text-label-bold text-slate-gray">5-Star Google Rated</span>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-[48px] md:py-[80px] bg-background">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="text-center mb-8 max-w-3xl mx-auto space-y-4">
+      <h2 class="font-headline-md text-headline-md text-deep-navy">Featured Handyman Services</h2>
+      <p class="font-body-lg text-body-lg text-slate-gray">Stop stressing and let me tackle those projects for you. Specialized in precision work and general home maintenance.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Minor Electrical -->
+      <div class="bg-white rounded-xl border border-border-light overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
+        <div class="h-48 overflow-hidden relative">
+          <img
+            src="https://lh3.googleusercontent.com/aida/AP1WRLtZp8EdS9_g69bZJ-_JilB7sjJosIN0b1-4_lZvLo6Dms87Lym5n_GtAkHeMc8tt5gkqbFL_icA-kUs38K836pacUfOJOzrvseWeJMVuhj7u9mPR2sTldSq2VyVcCf46W8YWl6gTvlTLjdGKYcexDs0RbdnUdfjRX82BhZPLyWWGFaWeyxOvbe8Y9qJ_e4-F0yOBcoqAQk56ignP1d_ARQ6gPLWTPZhMs-JTZOUCWzEvWOVJIQqoPScpoN_"
+            alt="Ceiling fan installation"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute top-4 left-4 bg-white p-2 rounded shadow-sm">
+            <span class="material-symbols-outlined text-deep-navy">electric_bolt</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Minor Electrical</h3>
+          <p class="font-body-md text-body-md text-slate-gray mb-6 flex-grow">Ceiling fans, dimmers, thermostats, network setup, and smart automation upgrades handled safely.</p>
+          <a href="services.html" class="inline-flex items-center gap-2 font-label-bold text-label-bold text-safety-orange group-hover:text-deep-navy transition-colors mt-auto">
+            View Services <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Door Repair -->
+      <div class="bg-white rounded-xl border border-border-light overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
+        <div class="h-48 overflow-hidden relative">
+          <img
+            src="https://lh3.googleusercontent.com/aida/AP1WRLvZh3moFkVP-DpzIgoI67fcFPj0cBEhhLEvuRN6nsFkBDPWtrGYI2UxWCEva-IdcNUG3T2dZlelwz7IthvDAlWMhy3lAnbjdT1YBY0J4UbvgErcU2noPz1oTTL3gAtdfT4qX_dPB-HlDR0rrS-qDuYMjupQlBMUn4m6vcMUiv29SUFujTu2mC9Z3CNULOzf7A3ORKUqq0f1SBhcL9t15hRIi_pmUikKS1MtBBKQnVU_sWG03Bx-iDRoe18"
+            alt="Electronic door lock installation"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute top-4 left-4 bg-white p-2 rounded shadow-sm">
+            <span class="material-symbols-outlined text-deep-navy">door_front</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Door Repair &amp; Locks</h3>
+          <p class="font-body-md text-body-md text-slate-gray mb-6 flex-grow">Fixing warped doors, replacing hardware, and installing modern electronic keyless entry systems.</p>
+          <a href="services.html" class="inline-flex items-center gap-2 font-label-bold text-label-bold text-safety-orange group-hover:text-deep-navy transition-colors mt-auto">
+            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- To-Do List -->
+      <div class="bg-white rounded-xl border border-border-light overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
+        <div class="h-48 overflow-hidden relative">
+          <img
+            src="https://lh3.googleusercontent.com/aida/AP1WRLtWj5qXvJOOE_Dq548szAzzcpsb1bU3N1FeAkB_hdBW1cqxi3VyKdKqLbmV0tgnGL8IA6ORZRrgdSkvAV4-4DPRjtW77W7IGsO0pV3pIKQLF-Pm3s1m0g2jj4FIsKLk0GbAOBRw38e_rPfmnrB-FhSMrpdslCnLvHxMRYBUaQQv9hePu6Lw5dKaRjYilVjSq_O5lNlaRXzXHsN8dqd4g4yC72X2iYBoyH8ySq1KBwLJcdz56qAByOZi0hE"
+            alt="Home to-do list completion"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute top-4 left-4 bg-white p-2 rounded shadow-sm">
+            <span class="material-symbols-outlined text-deep-navy">checklist</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">To-Do List Completion</h3>
+          <p class="font-body-md text-body-md text-slate-gray mb-6 flex-grow">Picture hanging, furniture assembly, shelving, and general home repairs. Hire for half or full days.</p>
+          <a href="services.html" class="inline-flex items-center gap-2 font-label-bold text-label-bold text-safety-orange group-hover:text-deep-navy transition-colors mt-auto">
+            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-[48px] md:py-[80px] bg-surface-bright border-t border-border-light">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="text-center mb-8 space-y-3">
+      <h2 class="font-headline-md text-headline-md text-deep-navy">What People Are Saying</h2>
+      <p class="font-body-lg text-body-lg text-slate-gray">Real feedback from homeowners across Lexington.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white border border-border-light rounded-xl p-8 shadow-sm flex flex-col relative">
+        <span class="material-symbols-outlined absolute top-6 right-6 text-safety-orange/20 text-4xl" style="font-variation-settings:'FILL' 1;">format_quote</span>
+        <div class="flex gap-1 mb-4 text-safety-orange">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+        </div>
+        <p class="font-testimonial-quote text-testimonial-quote text-slate-gray italic mb-6 flex-grow">
+          "Paul helped troubleshoot a warped door. He provided good input via text before making an appointment, and showed up when he said he would. A+ service."
+        </p>
+        <div class="pt-4 border-t border-border-light">
+          <p class="font-label-bold text-label-bold text-primary">— Craig B.</p>
+          <p class="text-xs text-slate-gray mt-1">Google Review</p>
+        </div>
+      </div>
+      <div class="bg-white border border-border-light rounded-xl p-8 shadow-sm flex flex-col relative">
+        <span class="material-symbols-outlined absolute top-6 right-6 text-safety-orange/20 text-4xl" style="font-variation-settings:'FILL' 1;">format_quote</span>
+        <div class="flex gap-1 mb-4 text-safety-orange">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+        </div>
+        <p class="font-testimonial-quote text-testimonial-quote text-slate-gray italic mb-6 flex-grow">
+          "I called Paul after Home Depot was unable to install our microwave, oven, and dishwasher. Paul was very responsive and used his expertise to solve the problems. We will be sure to call him again!"
+        </p>
+        <div class="pt-4 border-t border-border-light">
+          <p class="font-label-bold text-label-bold text-primary">— Michelle R.</p>
+          <p class="text-xs text-slate-gray mt-1">Google Review</p>
+        </div>
+      </div>
+      <div class="bg-white border border-border-light rounded-xl p-8 shadow-sm flex flex-col relative">
+        <span class="material-symbols-outlined absolute top-6 right-6 text-safety-orange/20 text-4xl" style="font-variation-settings:'FILL' 1;">format_quote</span>
+        <div class="flex gap-1 mb-4 text-safety-orange">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+        </div>
+        <p class="font-testimonial-quote text-testimonial-quote text-slate-gray italic mb-6 flex-grow">
+          "Paul was a great teacher and provider of information for beginners. He helped me get to a spot where I'm comfortable working on my own projects."
+        </p>
+        <div class="pt-4 border-t border-border-light">
+          <p class="font-label-bold text-label-bold text-primary">— Virginia C.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="bg-deep-navy py-[48px] px-6">
+  <div class="max-w-[1280px] mx-auto text-center space-y-6">
+    <h2 class="font-headline-md text-headline-md text-white">Ready to clear your to-do list?</h2>
+    <p class="font-body-lg text-body-lg text-surface-dim max-w-xl mx-auto">Contact Paul today for a free estimate. M–F 9am–5pm, Lexington and surrounding areas.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="areas.html#contact" class="bg-safety-orange text-white px-8 py-3 rounded font-label-bold text-label-bold hover:opacity-90 transition-opacity shadow-md inline-block">
+        Request a Quote
+      </a>
+      <a href="tel:+18592278314" class="border-2 border-white text-white px-8 py-3 rounded font-label-bold text-label-bold hover:bg-white/10 transition-colors inline-block">
+        Call 859-227-8314
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary py-[80px]">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-[1280px] mx-auto px-6">
+    <div class="md:col-span-1 space-y-4">
+      <span class="font-headline-sm text-headline-sm font-bold text-white block">Paul's Precision Handyman</span>
+      <p class="font-body-md text-body-md text-on-primary-container">Quality handyman services for busy professionals in Lexington, KY.</p>
+      <p class="font-body-md text-body-md text-on-primary-container text-sm">© 2025 Paul's Precision Handyman. Licensed &amp; Insured.</p>
+    </div>
+    <div class="md:col-span-1 flex flex-col gap-3">
+      <h4 class="font-label-bold text-label-bold text-white uppercase tracking-wider opacity-80">Services</h4>
+      <a href="services.html" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">Minor Electrical</a>
+      <a href="services.html" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">Door Repair &amp; Locks</a>
+      <a href="services.html" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">To-Do List Completion</a>
+    </div>
+    <div class="md:col-span-1 flex flex-col gap-3">
+      <h4 class="font-label-bold text-label-bold text-white uppercase tracking-wider opacity-80">Links</h4>
+      <a href="about.html" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">About Paul</a>
+      <a href="areas.html" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">Service Areas</a>
+      <a href="areas.html#contact" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">Book Now</a>
+      <a href="https://www.facebook.com/PaulsHandymanSolutionsLex" target="_blank" rel="noopener" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">Facebook</a>
+    </div>
+    <div class="md:col-span-1 flex flex-col gap-3">
+      <h4 class="font-label-bold text-label-bold text-white uppercase tracking-wider opacity-80">Contact</h4>
+      <a href="tel:+18592278314" class="font-body-md text-body-md text-safety-orange font-bold hover:text-tertiary-fixed-dim transition-colors">859-227-8314</a>
+      <a href="mailto:pbriggs8@gmail.com" class="font-body-md text-body-md text-on-primary-container hover:text-white transition-colors">pbriggs8@gmail.com</a>
+      <p class="font-body-md text-body-md text-on-primary-container text-sm">M–F: 9am–5pm<br/>Weekends: Closed</p>
+      <p class="font-body-md text-body-md text-on-primary-container text-sm">Lexington, KY 40503</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+  });
+</script>
+</body>
+</html>
